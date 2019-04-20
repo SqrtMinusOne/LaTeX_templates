@@ -21,7 +21,7 @@
 % ====== Other text spacing ======
 
 \usepackage{setspace} % String spacing
-\onehalfspacing
+\onehalfspacing{}
 
 \usepackage{parskip} % The red line
 \setlength{\parskip}{15pt} % Sep beetween paragraphs
@@ -132,7 +132,6 @@
 % ====== My commands ======
 \newcommand{\addonsubheader}[1]{{\center{\bfseries \vspace{-0.5cm} #1} \\ \vspace{15pt}}}
 
-\newcommand{\definition}[1]{\textbf{#1}}
 \newcommand{\screenshot}[3]{
 	\begin{figure}[h]
 		\centering
@@ -159,7 +158,7 @@
 \titleformat*{\subsection}{\bfseries}
 \titleformat*{\subsubsection}{\bfseries}
 \titleformat*{\paragraph}{\bfseries}
-\titleformat*{\subparagraph}{\bfseries\itshape}
+\titleformat*{\subparagraph}{\bfseries\itshape}% chktex 6
 
 \titlespacing*{\section}{0pt}{12pt}{3pt}
 \titlespacing*{\subsection}{0pt}{6pt}{3pt}
@@ -201,7 +200,7 @@ bottom=2cm
 		
 		\vspace{1cm}
 		Санкт-Петербург \\
-		\the\year
+        \the\year{}
 	\end{titlepage}
 	
 	\newpage

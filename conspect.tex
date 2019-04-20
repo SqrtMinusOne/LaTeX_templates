@@ -21,7 +21,7 @@
 % ====== Other text spacing ======
 
 \usepackage{setspace} % String spacing
-\onehalfspacing
+\onehalfspacing{}
 
 \usepackage{parskip} % The red line
 \setlength{\parskip}{15pt} % Sep beetween paragraphs
@@ -132,7 +132,6 @@
 % ====== My commands ======
 \newcommand{\addonsubheader}[1]{{\center{\bfseries \vspace{-0.5cm} #1} \\ \vspace{15pt}}}
 
-\newcommand{\definition}[1]{\textbf{#1}}
 \newcommand{\screenshot}[3]{
 	\begin{figure}[h]
 		\centering
@@ -191,7 +190,7 @@ bottom=2cm
 		}
 		\begin{tabular}{l l}
 			\textbf{Лектор}: & Лектор\\
-			\textbf{Страниц}: & \pageref{LastPage}\\
+			\textbf{Страниц}: &\pageref{LastPage}\\
 			\textbf{Последнее обновление}: & \today{}\\ 
 			\textbf{Автор}: & Корытов Павел, 6304\\
 		\end{tabular}
