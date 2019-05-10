@@ -6,8 +6,8 @@
 \usepackage{fontspec}
 \usepackage{polyglossia} % Russian lang
 \setdefaultlanguage{russian}
-\setmainfont{Times New Roman}
-\newfontfamily\cyrillicfont{Times New Roman}
+\setmainfont{Times New Roman}[Mapping=tex-text]
+\newfontfamily\cyrillicfont{Times New Roman}[Mapping=tex-text]
 
 % TODO look for better; don't like this one
 \setmonofont[Scale=0.9]{DejaVu Sans Mono}
@@ -29,36 +29,37 @@
 \usepackage{enumitem}
 \setlist{nosep, topsep=-10pt} % Remove sep-s beetween list elements
 
+\newfontfamily\cyrillicfont{Times New Roman}
 % ====== Source code listings ======
 
 \usepackage{listings} % Source code
 \lstset{
-	basicstyle=\ttfamily,
-	breaklines=true,
-	breakatwhitespace=true,
-	commentstyle=\color{green},
-	keywordstyle=\bfseries\color{blue},
-	tabsize=4
+    basicstyle=\ttfamily,
+    breaklines=true,
+    breakatwhitespace=true,
+    commentstyle=\color{green},
+    keywordstyle=\bfseries\color{blue},
+    tabsize=4
 }
 
 \lstdefinestyle{num}{
-	numbers=left,
-	numbersep=0.5cm,
-	numberstyle=\ttfamily,
-	xleftmargin=0.85cm,
+    numbers=left,
+    numbersep=0.5cm,
+    numberstyle=\ttfamily,
+    xleftmargin=0.85cm,
 }
 
 \lstdefinestyle{framed_num}{
-	frame=single,
-	numbers=left,
-	numbersep=0.5cm,
-	numberstyle=\ttfamily\color{red},
-	xleftmargin=1cm,
-	framexleftmargin=1cm
+    frame=single,
+    numbers=left,
+    numbersep=0.5cm,
+    numberstyle=\ttfamily\color{red},
+    xleftmargin=1cm,
+    framexleftmargin=1cm
 }
 
 \lstdefinestyle{sql_style}{
-	morekeywords=[10]{while, do, procedure, begin, end, if, tinyint, enum, datetime, boolean, declare, function, return, deterministic, is}
+    morekeywords=[10]{while, do, procedure, begin, end, if, tinyint, enum, datetime, boolean, declare, function, return, deterministic, is}
 }
 
 \renewcommand{\lstlistingname}{Листинг}
@@ -69,11 +70,11 @@
 % ====== References ======
 \usepackage{hyperref} % Links
 \hypersetup{
-	colorlinks,
-	citecolor=black,
-	filecolor=black,
-	linkcolor=black,
-	urlcolor=black
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
 }
 
 
@@ -83,27 +84,27 @@
 \captionsetup[figure]{name=Рисунок, labelsep=endash, parskip=0pt}
 
 \captionsetup[lstlisting]{
-	labelsep=period,
-	justification=RaggedLeft,
-	parskip=0pt,
-	singlelinecheck=false,
-	skip=3pt
+    labelsep=period,
+    justification=RaggedLeft,
+    parskip=0pt,
+    singlelinecheck=false,
+    skip=3pt
 }
 
 \captionsetup[table]{
-	labelsep=period,
-	justification=RaggedLeft,
-	parskip=0pt,
-	singlelinecheck=false,
-	skip=3pt
+    labelsep=period,
+    justification=RaggedLeft,
+    parskip=0pt,
+    singlelinecheck=false,
+    skip=3pt
 }
 
 \captionsetup[figure]{
-	name=Рисунок,
-	justification=centering,
-	labelsep=period,
-	parskip=6pt,
-	skip=3pt
+    name=Рисунок,
+    justification=centering,
+    labelsep=period,
+    parskip=6pt,
+    skip=3pt
 }
 
 % ====== Misc ======
@@ -133,11 +134,11 @@
 \newcommand{\addonsubheader}[1]{{\center{\bfseries \vspace{-0.5cm} #1} \\ \vspace{15pt}}}
 
 \newcommand{\screenshot}[3]{
-	\begin{figure}[h]
-		\centering
-		\includegraphics[#1]{#2}
-		\caption{#3}
-	\end{figure}
+    \begin{figure}[h]
+        \centering
+        \includegraphics[#1]{#2}
+        \caption{#3}
+    \end{figure}
 }
 
 % ====== Counters ======
@@ -147,9 +148,9 @@
 \newcounter{stepcounter}[subsubsection]
 
 \newcommand\steppar[1][\DefaultOpt]{
-	\def\DefaultOpt{#1}
-	\paragraph{Шаг №\thestepcounter.}
-	\refstepcounter{stepcounter}
+    \def\DefaultOpt{#1}
+    \paragraph{Шаг №\thestepcounter.}
+    \refstepcounter{stepcounter}
 }
 
 % ====== Document sectioning ======
@@ -175,40 +176,40 @@ bottom=2cm
 ]{geometry}
 
 \begin{document}
-	\begin{titlepage}
-		\centering
-		{\bfseries
-			\uppercase{
-				Минобрнауки России \\
-				Санкт-Петербургский государственный \\
-				Электротехнический университет \\
-				\enquote{ЛЭТИ} им. В.И.Ульянова (Ленина)\\
-			}
-			Кафедра МО ЭВМ
-			
-			\vspace{\fill}
-			\uppercase{Лабораторная работа №} \\
-			по дисциплине \enquote{Дисциплина} \\
-			Тема: Тема
-		}
-		
-		\vspace{\fill}
-		\begin{tabularx}{0.8\textwidth}{l X c r}
-			Студент гр. 6304 & & \underline{\hspace{3cm}} & Корытов П.В.\\
-			Преподаватель & & \underline{\hspace{3cm}} & Преподаватель П.П.
-		\end{tabularx}
-		
-		\vspace{1cm}
-		Санкт-Петербург \\
-        \the\year{}
-	\end{titlepage}
-	
-	\newpage
-	
-	\section*{Цель работы}
-	
-	\section*{Ход работы}
-	
-	\section*{Выводы}
-	
+\begin{titlepage}
+    \centering
+    {\bfseries
+        \uppercase{
+            Минобрнауки России \\
+            Санкт-Петербургский государственный \\
+            Электротехнический университет \\
+            \enquote{ЛЭТИ} им. В.И.Ульянова (Ленина)\\
+        }
+        Кафедра МО ЭВМ
+
+        \vspace{\fill}
+        \uppercase{Лабораторная работа №} \\
+        по дисциплине \enquote{Дисциплина} \\
+        Тема: Тема
+    }
+
+    \vspace{\fill}
+    \begin{tabularx}{0.8\textwidth}{l X c r}
+        Студент гр. 6304 & & \underline{\hspace{3cm}} & Корытов П.В.\\
+        Преподаватель & & \underline{\hspace{3cm}} & Преподаватель П.П.
+    \end{tabularx}
+
+    \vspace{1cm}
+    Санкт-Петербург \\
+    \the\year{}
+\end{titlepage}
+
+\newpage
+
+\section*{Цель работы}
+
+\section*{Ход работы}
+
+\section*{Выводы}
+
 \end{document}
