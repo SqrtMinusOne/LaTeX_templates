@@ -39,7 +39,6 @@
 % ====== Captions ======
 \usepackage{caption}
 \usepackage{subcaption}
-\captionsetup[figure]{name=Рисунок, labelsep=endash, parskip=0pt}
 
 \captionsetup[table]{
     labelsep=period,
@@ -52,7 +51,7 @@
 \captionsetup[figure]{
     name=Рисунок,
     justification=centering,
-    labelsep=period,
+    labelsep=endash,
     parskip=6pt,
     skip=3pt
 }
@@ -66,6 +65,8 @@
 \usepackage{csquotes} % French quoutes
 \usepackage{multirow} % Multi-row tables
 \usepackage{tcolorbox} % Nice colored box
+\usepackage{booktabs}
+\usepackage{longtable}
 
 \usepackage{lastpage} % Link to the last page
 
@@ -97,13 +98,15 @@
     \textit{#1}
 }
 
-\newcounter{examplecounter}[section]
-
-\newenvironment{example}[1]{
-    \refstepcounter{examplecounter}
-    \paragraph{Пример \thesection.\theexamplecounter. } #1\\
-}{
-    
+\usepackage{environ}
+\NewEnviron{rotateandfit}{%
+    \begin{center}
+        \rotatebox{90}{
+        \resizebox{\dimexpr\pagegoal-\pagetotal-\baselineskip\relax}{!}{%
+            \BODY{}
+        }
+    }
+    \end{center}
 }
 
 % ====== Counters ======
