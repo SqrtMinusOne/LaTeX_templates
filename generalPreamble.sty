@@ -39,10 +39,11 @@
 % ====== Captions ======
 \usepackage{caption}
 \usepackage{subcaption}
+% \captionsetup[figure]{name=Рисунок, labelsep=endash, parskip=0pt}
 
 \captionsetup[table]{
     labelsep=period,
-    justification=RaggedLeft,
+    justification=RaggedRight,
     parskip=0pt,
     singlelinecheck=false,
     skip=3pt
@@ -56,19 +57,22 @@
     skip=3pt
 }
 
+% ====== Tables ======
+\usepackage{tabularx} % X-tables
+\usepackage{booktabs}
+\usepackage{longtable}
 
 % ====== Misc ======
 \usepackage{metalogo} % Logos for LaTeX
 \usepackage{lipsum} % Lorem ipsum
 \usepackage{graphicx} % Pictures
-\usepackage{tabularx} % X-tables
 \usepackage{csquotes} % French quoutes
 \usepackage{multirow} % Multi-row tables
 \usepackage{tcolorbox} % Nice colored box
-\usepackage{booktabs}
-\usepackage{longtable}
 
 \usepackage{lastpage} % Link to the last page
+\usepackage{soul}
+\usepackage{pifont}
 
 \usepackage{placeins} % FloatBarrier
 
@@ -102,8 +106,8 @@
 \NewEnviron{rotateandfit}{%
     \begin{center}
         \rotatebox{90}{
-        \resizebox{\dimexpr\pagegoal-\pagetotal-\baselineskip\relax}{!}{%
-            \BODY{}
+            \resizebox{\dimexpr\pagegoal-\pagetotal-\baselineskip\relax}{!}{%
+                \BODY{}
         }
     }
     \end{center}

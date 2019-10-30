@@ -1,0 +1,57 @@
+\ProvidesPackage{presentationPreamble}
+
+% ====== Localization & fonts ======
+\usepackage{xcolor}
+\usepackage{fontspec}
+\usepackage{polyglossia} % Russian lang
+\setdefaultlanguage{russian}
+\setmainfont{Arial}[Mapping=tex-text]
+\newfontfamily\cyrillicfont{Arial}[Mapping=tex-text]
+
+\setmonofont[Scale=0.9]{DejaVu Sans Mono}
+\newfontfamily{\cyrillicfonttt}{DejaVu Sans Mono}[Scale=0.8]
+
+% ====== Math ======
+\usepackage{amsmath} % Math stuff
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{amssymb}
+\usepackage{interval}
+
+\intervalconfig{
+    soft open fences
+}
+
+% ====== CSV ======
+\usepackage{csvsimple} % Load CSV
+
+% ====== References ======
+\usepackage{hyperref} % Links
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+% ====== Misc ======
+\usepackage{metalogo} % Logos for LaTeX
+\usepackage{lipsum} % Lorem ipsum
+\usepackage{graphicx} % Pictures
+\usepackage{tabularx} % X-tables
+\usepackage{csquotes} % French quoutes
+\usepackage{multirow} % Multi-row tables
+\usepackage{tcolorbox} % Nice colored box
+\usepackage{booktabs}
+
+\usepackage{lastpage} % Link to the last page
+
+\usepackage{placeins} % FloatBarrier
+
+% ====== Plotting ======
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{dateplot}
