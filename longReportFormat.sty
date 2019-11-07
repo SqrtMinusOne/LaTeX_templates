@@ -20,6 +20,12 @@ top=2cm,
 bottom=2cm	
 ]{geometry}
 
+% ====== My command ======
+\newcommand{\StartAddons}{
+    \titlespacing*{\section}{0pt}{12pt}{3pt}
+}
+
+\newcommand{\addonsubheader}[1]{{\center{\bfseries #1} \\ \vspace{6pt}}}
 
 % ====== Document sectioning ======
 \usepackage{titlesec}
@@ -28,6 +34,7 @@ bottom=2cm
 \titleformat*{\subsubsection}{\bfseries}
 \titleformat*{\paragraph}{\bfseries}
 \titleformat*{\subparagraph}{\bfseries\itshape} % chktex 6
+
 
 \titlespacing*{\subsection}{0pt}{24pt}{3pt}
 \titlespacing*{\subsubsection}{0pt}{15pt}{0pt}
