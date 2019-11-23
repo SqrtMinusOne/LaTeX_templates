@@ -11,6 +11,8 @@
 \usepackage{enumitem}
 \setlist{nosep, topsep=-10pt} % Remove sep-s beetween list elements
 \setlist[enumerate]{label*=\arabic*.}
+\setlist[enumerate,1]{after=\vspace{\baselineskip}}
+\setlist[itemize,1]{after=\vspace{\baselineskip}}
 
 % ====== Page layout ======
 \usepackage[ % Margins
@@ -20,13 +22,12 @@ top=2cm,
 bottom=2cm	
 ]{geometry}
 
-% ====== My commands ======
+% ====== My command ======
 \newcommand{\StartAddons}{
-    % Do nothing
+    \titlespacing*{\section}{0pt}{12pt}{3pt}
 }
 
-\newcommand{\addonsubheader}[1]{{\center{\bfseries #1} \\ \vspace{15pt}}}
-
+\newcommand{\addonsubheader}[1]{{\center{\bfseries #1} \\ \vspace{6pt}}}
 
 % ====== Document sectioning ======
 \usepackage{titlesec}
@@ -35,6 +36,7 @@ bottom=2cm
 \titleformat*{\subsubsection}{\bfseries}
 \titleformat*{\paragraph}{\bfseries}
 \titleformat*{\subparagraph}{\bfseries\itshape} % chktex 6
+
 
 \titlespacing*{\subsection}{0pt}{24pt}{3pt}
 \titlespacing*{\subsubsection}{0pt}{15pt}{0pt}
