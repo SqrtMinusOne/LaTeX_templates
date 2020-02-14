@@ -1,0 +1,59 @@
+\ProvidesPackage{mintedSourceCode}
+
+\usepackage{floatrow}
+\usepackage{minted}
+
+\renewcommand{\theFancyVerbLine}{\ttfamily \textcolor[rgb]{1.0,0.0,0.0}{\oldstylenums{\arabic{FancyVerbLine}}}}
+
+\floatsetup[listing]{%
+    style=plain,capposition=TOP
+}
+
+\captionsetup[listing]{
+    labelsep=period,
+    justification=RaggedLeft,
+    parskip=0pt,
+    singlelinecheck=false,
+    skip=3pt,
+    position=top,
+    name=Листинг
+}
+
+% \renewcommand{\listingname}{Листинг}
+
+\edef\@defaultMintedArgs{%
+    breaklines=true,%
+    tabsize=4,%
+    autogobble,
+}
+
+\edef\@numMintedArgs{%
+    \@defaultMintedArgs
+    linenos,%
+    numbersep=0.5cm,%
+    xleftmargin=0.85cm,%
+}
+
+\edef\@frameMintedArgs{%
+    \@defaultMintedArgs
+    linenos,%
+    numbersep=0.5cm,%
+    xleftmargin=1cm,%
+    frame=single,%
+}
+
+\newcommand{\makeoneminted}[3]{%
+    \newminted[#2#3]{#3}{#1}
+    \newmintedfile[#2#3file]{#3}{#1}
+}
+
+\newcommand{\makeminted}[2]{%
+    \makeoneminted{#1}{#2}{cpp}
+    \makeoneminted{#1}{#2}{python}
+    \makeoneminted{#1}{#2}{javascript}
+    \makeoneminted{#1}{#2}{bash}
+}
+
+\expandafter\makeminted\expandafter{\@defaultMintedArgs}{def}
+\expandafter\makeminted\expandafter{\@numMintedArgs}{num}
+\expandafter\makeminted\expandafter{\@frameMintedArgs}{frame}
