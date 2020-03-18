@@ -13,10 +13,16 @@
 
 % ====== List ======
 \usepackage{enumitem}
+\usepackage{etoolbox}
 \setlist{nosep, topsep=-10pt} % Remove sep-s beetween list elements
 \setlist[enumerate]{label*=\arabic*.}
-\setlist[enumerate,1]{after=\vspace{\baselineskip}}
-\setlist[itemize,1]{after=\vspace{\baselineskip}}
+\setlist[enumerate,1]{after=\vspace{0.5\baselineskip}}
+\setlist[itemize,1]{after=\vspace{0.5\baselineskip}}
+
+\AtBeginEnvironment{itemize}{%
+    \setlist[enumerate]{label=\arabic*.}
+    \setlist[enumerate,1]{after=\vspace{0\baselineskip}}
+}
 
 % ====== CSV ======
 \usepackage{csvsimple} % Load CSV

@@ -21,6 +21,9 @@
 # *.eps
 # *.pdf
 
+## Generated if empty string is given at "Please type another file name for output:"
+.pdf
+
 ## Bibliography auxiliary files (bibtex/biblatex/biber):
 *.bbl
 *.bcf
@@ -256,6 +259,9 @@ TSWLatexianTemp*
 # KBibTeX
 *~[0-9]*
 
+# TeXnicCenter
+*.tps
+
 # auto folder when using emacs and auctex
 ./auto/*
 *.el
@@ -269,9 +275,7 @@ TSWLatexianTemp*
 # Makeindex log files
 *.lpz
 
-# src
-# src/**/*.pdf
-# !src/**/pdf/*.pdf
-
-# pdf
-*.pdf
+# REVTeX puts footnotes in the bibliography by default, unless the nofootinbib
+# option is specified. Footnotes are the stored in a file with suffix Notes.bib.
+# Uncomment the next line to have this generated file ignored.
+#*Notes.bib

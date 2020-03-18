@@ -18,10 +18,18 @@ bottom=2cm
 
 % ====== My commands ======
 \newcommand{\StartAddons}{
-    \titleformat{\section}[display]{\filcenter\bfseries}{\thesection.}{0pt}{\MakeUppercase}
+    \titleformat{\section}[block]{\filcenter\bfseries}{\thesection.}{0pt}{\MakeUppercase}
+    \titleformat{\subsection}[block]{\filcenter\bfseries}{}{0pt}{}
 }
 
-\newcommand{\addonsubheader}[1]{{\center{\bfseries #1} \\ \vspace{15pt}}}
+\newenvironment{Addons}{
+    \titleformat{\section}[block]{\filcenter\bfseries}{\thesection.}{0pt}{\MakeUppercase}
+    \titleformat{\subsection}[block]{\filcenter\bfseries}{}{0pt}{}
+    \titlespacing*{\section}{0pt}{0pt}{3pt}
+    \titlespacing*{\subsection}{0pt}{0pt}{3pt}
+}{}
+
+\newcommand{\addonsubheader}[1]{\subsection*{#1}}
 
 \newcommand{\AddonSection}[2]{%
     \clearpage
