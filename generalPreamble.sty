@@ -51,13 +51,18 @@
 }
 
 % ====== Captions ======
-\usepackage{caption}
+\usepackage[tableposition=top]{caption}
 \usepackage{subcaption}
-% \captionsetup[figure]{name=Рисунок, labelsep=endash, parskip=0pt}
+\usepackage{floatrow}
+
+\floatsetup[table]{%
+    style=Plaintop,
+    capbesideframe=yes,
+}
 
 \captionsetup[table]{
     labelsep=period,
-    justification=RaggedRight,
+    % justification=RaggedRight,
     parskip=0pt,
     singlelinecheck=false,
     skip=3pt
