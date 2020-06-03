@@ -98,6 +98,8 @@
 \usepackage[final]{pdfpages} % Include PDF
 \setboolean{@twoside}{false}
 
+\usepackage[normalem]{ulem}
+
 % ====== Plotting ======
 \usepackage{tikz}
 \usepackage{pgfplots}
@@ -138,6 +140,18 @@
         }
     \end{center}
 }
+
+\newcommand\tline[2]{$\underset{\text{#1}}{\text{\underline{\hspace{#2}}}}$}
+
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+
+\newcommand{\underlinestretch}[2]{\makebox[#1]{%
+    \centering\uline{\hfill #2 \hfill}%
+}}
+
+\newcommand{\underlinebreak}[2]{\makebox[#1]{%
+\hrulefill{}\:#2\:\hrulefill{}
+}}
 
 % ====== Counters ======
 
